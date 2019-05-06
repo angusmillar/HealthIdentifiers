@@ -1,0 +1,2 @@
+# HealthIdentifiers
+A library for parsing healthcare identifiers to check they are syntactically correct. There are also methods for randomly generating instances of the same identifiers for testing purposes. The currently supported identifiers are primarily used in the Australian context and are: Medicare Number, Department Veterans Affairs Number (DVA), Individual Healthcare Identifier (IHI), Healthcare Provider Identifier - Individual (HPI-I), Healthcare Provider Identifier - Organisation (HPI-O)
