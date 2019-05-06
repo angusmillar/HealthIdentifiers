@@ -22,7 +22,7 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
     }
 
     /// <summary>
-    /// Convertes the HealthcareIdentifierType enum to the apropirate interger required for the Identifier value
+    /// Converts the HealthcareIdentifierType enum to the appropriate integer required for the Identifier value
     /// </summary>
     /// <param name="Type"></param>
     /// <returns></returns>
@@ -37,7 +37,7 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
         case NationalHealthcareIdentifierParser.NationalHealthcareIdentifierType.Orginisation:
           return "2";
         default:
-          throw new System.ComponentModel.InvalidEnumArgumentException(Type.ToString(), (int)Type, typeof(NationalHealthcareIdentifierParser.NationalHealthcareIdentifierType));
+          throw new Exception($"No case statement for enum item of : {Type.ToString()}");
       }
     }
   }
