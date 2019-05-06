@@ -11,8 +11,8 @@
     <PackageTags>Healthcare Identifiers Medicare DVA IHI HPI-I HPI-O</PackageTags>
     <Product>Australian Health Identifiers</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
-    <Version>1.0.3</Version>
+    <FileVersion>1.0.4.0</FileVersion>
+    <Version>1.0.4</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
