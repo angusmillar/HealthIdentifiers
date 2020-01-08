@@ -101,5 +101,17 @@ namespace HealthIdentifiers.Identifiers_Test
       IDVANumber DVA;
       Assert.IsFalse(Parser.TryParse(Number, out DVA));
     }
+
+    [TestMethod]
+    [TestCategory("DVA Number Ben")]
+    public void Test_BenSkinner_Negative_DVA()
+    {
+      string Number = "WX82477A";
+
+      IDVANumberParser Parser = new DVANumberParser();
+      IDVANumber DVA;      
+      Assert.IsFalse(Parser.TryParse(Number, out DVA));
+    }
+    
   }
 }
