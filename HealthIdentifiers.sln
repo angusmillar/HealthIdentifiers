@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthIdentifiers.Identifiers", "HealthIdentifiers.Identifiers\HealthIdentifiers.Identifiers.csproj", "{A2F5EB03-C10B-4BBB-85BB-4B40EAB8CC66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthIdentifiers.Identifiers_Test", "HealthIdentifiers.Identifiers_Test\HealthIdentifiers.Identifiers_Test.csproj", "{2931B5F7-41B0-4D25-A683-0D8DFAA63E7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthIdentifier.Identifiers.Test", "HealthIdentifier.Identifiers.Test\HealthIdentifier.Identifiers.Test.csproj", "{2B54AD03-08B1-416E-BDB3-244A94046C56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A2F5EB03-C10B-4BBB-85BB-4B40EAB8CC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2F5EB03-C10B-4BBB-85BB-4B40EAB8CC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2F5EB03-C10B-4BBB-85BB-4B40EAB8CC66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2931B5F7-41B0-4D25-A683-0D8DFAA63E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2931B5F7-41B0-4D25-A683-0D8DFAA63E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2931B5F7-41B0-4D25-A683-0D8DFAA63E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2931B5F7-41B0-4D25-A683-0D8DFAA63E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B54AD03-08B1-416E-BDB3-244A94046C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B54AD03-08B1-416E-BDB3-244A94046C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B54AD03-08B1-416E-BDB3-244A94046C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B54AD03-08B1-416E-BDB3-244A94046C56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
