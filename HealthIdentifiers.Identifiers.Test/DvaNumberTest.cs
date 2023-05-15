@@ -1,6 +1,6 @@
 using HealthIdentifiers.Identifiers.Australian.DepartmentVeteransAffairs;
 
-namespace HealthIdentifier.Identifiers.Test;
+namespace HealthIdentifiers.Identifiers.Test;
 
 public class DvaNumberTest
 {

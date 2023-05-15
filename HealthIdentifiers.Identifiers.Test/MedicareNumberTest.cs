@@ -1,6 +1,6 @@
 using HealthIdentifiers.Identifiers.Australian.MedicareNumber;
 
-namespace HealthIdentifier.Identifiers.Test;
+namespace HealthIdentifiers.Identifiers.Test;
 
 public class MedicareNumberTest
 {

@@ -1,0 +1,35 @@
+﻿<Window x:Class="HealthIdentifiers.Tool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Health Identifier tool" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10" Orientation="Vertical">
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <Label Content="Select" />
+                <ComboBox Width="200"
+                          ItemsSource="{Binding Path=IdentifierList}"
+                          DisplayMemberPath="DisplayName"
+                          SelectedValuePath="DisplayName"
+                          SelectedItem="{Binding Path=SelectedIdentifier}" />
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <Label Content="{Binding Path=SelectedIdentifier.DisplayName}" />
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock FontFamily = "Verdana" 
+                           LineStackingStrategy = "MaxHeight" 
+                           LineHeight = "10" 
+                           Width = "500"  
+                           TextWrapping = "Wrap" 
+                           Background = "#FFE2B1B1" 
+                           Margin = "48,8,48,10"
+                           Text="{Binding Path=SelectedIdentifier.DisplayData}">
+			
+                    
+                </TextBlock>  
+            </StackPanel>
+            
+            
+        </StackPanel>
+    </Grid>
+</Window>

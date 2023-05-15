@@ -1,7 +1,7 @@
 using HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier;
 using HealthIdentifiers.Identifiers.Support.StandardsInformation.Australian;
 
-namespace HealthIdentifier.Identifiers.Test;
+namespace HealthIdentifiers.Identifiers.Test;
 
 public class NationalHealthcareIdentifierTest
 {
