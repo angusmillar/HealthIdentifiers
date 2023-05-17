@@ -10,41 +10,16 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="20" />
+            <RowDefinition Height="10" />
         </Grid.RowDefinitions>
-
-
+        
         <!-- <Rectangle Grid.Row="0" Grid.Column="0" Fill="Gray"></Rectangle> -->
-        <!-- -->
-        <!-- <Rectangle Grid.Row="1" Grid.Column="0" Fill="Fuchsia"></Rectangle> -->
-        <!-- -->
-        <!-- <Rectangle Grid.Row="2" Grid.Column="0" Fill="DimGray"></Rectangle> -->
-        <!-- -->
-        <!-- <Rectangle Grid.Row="3" Grid.Column="0" Fill="Lime"></Rectangle> -->
+        
+        <UserControls:IdentifierSelector Grid.Row="0" Margin="10,0,0,0"/>
 
-        <UserControls:IdentifierSelector Grid.Row="0" Margin="10,0,0,0"></UserControls:IdentifierSelector>
+        <UserControls:IdentifierValue Grid.Row="1"/>
 
-        <GroupBox Grid.Row="1" Margin="10,0,10,0" FontSize="16" FontWeight="Light" Header="Identifier Value">
-            <StackPanel Orientation="Vertical">
-                <TextBox BorderThickness="3" BorderBrush="LimeGreen" Margin="5" Height="30" FontSize="16" FontWeight="Light" TextAlignment="Center"
-                         VerticalContentAlignment="Center">
-                    8003 2564 1545 55485
-                </TextBox>
-                <Button Margin="5">Generate Random</Button>
-            </StackPanel>
-        </GroupBox>
-
-        <GroupBox Grid.Row="2" Margin="10,0,10,0" FontSize="16" FontWeight="Light" Header="Identifier's Components">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35" />
-                    <RowDefinition Height="35" />
-                    <RowDefinition Height="35" />
-                </Grid.RowDefinitions>
-                <UserControls:ValuePair Grid.Row="0"></UserControls:ValuePair>
-                <UserControls:ValuePair Grid.Row="1"></UserControls:ValuePair>
-                <UserControls:ValuePair Grid.Row="2"></UserControls:ValuePair>
-            </Grid>
-        </GroupBox>
+        <UserControls:IdentifierComponents Grid.Row="2"/>
+        
     </Grid>
 </Window>

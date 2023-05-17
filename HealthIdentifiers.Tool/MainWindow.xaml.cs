@@ -25,7 +25,7 @@ namespace HealthIdentifiers.Tool
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ToolVm();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

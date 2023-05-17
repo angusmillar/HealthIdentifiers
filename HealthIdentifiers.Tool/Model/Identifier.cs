@@ -1,6 +1,6 @@
 ﻿using HealthIdentifiers.Tool.Enums;
 
-namespace HealthIdentifiers.Tool;
+namespace HealthIdentifiers.Tool.Model;
 
 public class Identifier
 {
