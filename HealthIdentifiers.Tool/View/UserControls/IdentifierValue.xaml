@@ -9,12 +9,29 @@
     
     <GroupBox Grid.Row="1" Margin="10,0,10,0" FontSize="16" FontWeight="Light" Header="Identifier value">
         <StackPanel Orientation="Vertical">
-            <Grid>
-                <TextBox BorderThickness="3" BorderBrush="LimeGreen" Margin="5" Height="30" FontSize="16"
-                         FontWeight="Light" TextAlignment="Center"
-                         VerticalContentAlignment="Center">
+            <Grid Background="White">
+                <TextBox x:Name="TextBoxValue" 
+                         BorderThickness="3" BorderBrush="LimeGreen" 
+                         Margin="5" Height="30" 
+                         FontSize="16" FontWeight="Light" 
+                         TextAlignment="Center" VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         Text="{Binding ValueText, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                         TextChanged="TextBoxValue_OnTextChanged">
                 </TextBox>
-                <TextBlock Foreground="DarkGray" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Paste value..." FontSize="16" FontWeight="Light"></TextBlock>    
+                <TextBlock x:Name="TextBlockPlaceHolder" 
+                           Foreground="DarkGray" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" 
+                           Text="Paste here..." 
+                           FontSize="16" FontWeight="Light"
+                           Background="Transparent"
+                           Panel.ZIndex="-1" ></TextBlock> 
+                <Button x:Name="ButtonClear" 
+                        Height="30" Width="40" 
+                        HorizontalAlignment="Right" Margin="5" 
+                        Content="X" 
+                        Background="Transparent" Foreground="LightGray" BorderThickness="0"
+                        Click="ButtonClear_OnClick"></Button>
             </Grid>
             <Button Margin="5,5,5,10">Generate Random</Button>
         </StackPanel>

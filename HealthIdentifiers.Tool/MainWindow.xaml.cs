@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HealthIdentifiers.Tool.Enums;
+using HealthIdentifiers.Tool.Mvvm;
+using HealthIdentifiers.Tool.View.UserControls;
 using HealthIdentifiers.Tool.ViewModel;
 
 namespace HealthIdentifiers.Tool
@@ -22,10 +25,29 @@ namespace HealthIdentifiers.Tool
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainWindowViewModel _MainWindowViewModel;
         public MainWindow()
         {
+            
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            _MainWindowViewModel = new MainWindowViewModel();
+            DataContext = _MainWindowViewModel;
+            
+            AddHandler(EventManagement.OnChangeViewEventIdentifierValue, new RoutedEventHandler(SomeControl_ChangeView));
+        }
+        
+        private void SomeControl_ChangeView(object sender, RoutedEventArgs routedEventArgs)
+        {
+            if (routedEventArgs.Source is IdentifierValue identifierValue)
+            {
+                _MainWindowViewModel.SelectedIdentifier.Value = identifierValue.TextBoxValue.Text;
+            }
+            else
+            {
+                throw new EventSourceException(nameof(EventManagement.OnChangeViewEventIdentifierValue));
+            }
+            
+            
         }
     }
 }

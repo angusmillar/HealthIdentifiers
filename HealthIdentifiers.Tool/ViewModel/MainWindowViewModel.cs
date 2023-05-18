@@ -4,6 +4,7 @@ using System.Linq;
 using HealthIdentifiers.Tool.Enums;
 using HealthIdentifiers.Tool.Model;
 using HealthIdentifiers.Tool.Mvvm;
+using HealthIdentifiers.Tool.View.UserControls;
 
 namespace HealthIdentifiers.Tool.ViewModel;
 
@@ -13,28 +14,32 @@ public class MainWindowViewModel : ViewModelBase
     {
         IdentifierList = new ObservableCollection<Identifier>
         {
-            new Identifier(type: IdentifierType.Dva, displayName: "DVA"),
-            new Identifier(type: IdentifierType.MedicareNumber, displayName: "Medicare Number"),
-            new Identifier(type: IdentifierType.MedicareProviderNumber, displayName: "Medicare Provider Number"),
-            new Identifier(type: IdentifierType.Hpii, displayName: "HPI-I"),
-            new Identifier(type: IdentifierType.Hpio, displayName: "HPI-O"),
-            new Identifier(type: IdentifierType.Ihi, displayName: "IHI"),
+            //new Identifier(type: IdentifierType.Dva, displayName: "DVA"),
+            new MedicareNumberIdentifier(),
+            //new Identifier(type: IdentifierType.MedicareProviderNumber, displayName: "Medicare Provider Number"),
+            //new Identifier(type: IdentifierType.Hpii, displayName: "HPI-I"),
+            //new Identifier(type: IdentifierType.Hpio, displayName: "HPI-O"),
+            //new Identifier(type: IdentifierType.Ihi, displayName: "IHI"),
         };
-        selectedIdentifier = IdentifierList.Single(x => x.Type == IdentifierType.MedicareNumber);
+        _SelectedIdentifier = IdentifierList.Single(x => x.Type == IdentifierType.MedicareNumber);
     }
 
     public ObservableCollection<Identifier> IdentifierList { get; private set; }
     
-    private Identifier selectedIdentifier;
+    private Identifier _SelectedIdentifier;
     public Identifier SelectedIdentifier
     {
-        get { return selectedIdentifier; }
+        get => _SelectedIdentifier;
         set
         {
-            selectedIdentifier = value;
+            _SelectedIdentifier = value;
             OnPropertyChanged();
         }
     }
-    
+
+    public void ValidateIdentifierValue()
+    {
+        
+    }
     
 }
