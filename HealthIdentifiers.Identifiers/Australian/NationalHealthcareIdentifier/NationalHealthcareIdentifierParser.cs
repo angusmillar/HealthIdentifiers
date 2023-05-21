@@ -30,6 +30,9 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
 
     internal static readonly string _ValidIndustryCode = "80";
     internal static readonly string _ValidCountryCode = "036";
+    internal static readonly string _IhiIssueNumber = "0";
+    internal static readonly string _HpiiIssueNumber = "1";
+    internal static readonly string _HpioIssueNumber = "2";
 
     internal bool BaseTryParse(string NationalHealthcareIdentifierString, NationalHealthcareIdentifierType IdentifierType, out INationalHealthcareIdentifierBase NationalHealthcareIdentifierBase)
     {
@@ -58,18 +61,34 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
       }
 
       Id.Value = NationalHealthcareIdentifierString;
-
-      if (Id.NumberIssuerCode != NationalHealthcareIdentifierString.Substring(5, 1))
+      
+      switch (IdentifierType)
       {
-        return false;
+
+        case NationalHealthcareIdentifierType.Individual:
+          if (!NationalHealthcareIdentifierString.Substring(5, 1).Equals(NationalHealthcareIdentifierParser._IhiIssueNumber))
+            return false;
+          break;
+        case NationalHealthcareIdentifierType.Provider:
+          if (!NationalHealthcareIdentifierString.Substring(5, 1).Equals((NationalHealthcareIdentifierParser._HpiiIssueNumber)))
+            return false;
+          break;
+        case NationalHealthcareIdentifierType.Orginisation:
+          if (!NationalHealthcareIdentifierString.Substring(5, 1).Equals(NationalHealthcareIdentifierParser._HpioIssueNumber))
+            return false;
+          break;
+        default:
+          throw new ArgumentOutOfRangeException(nameof(IdentifierType), IdentifierType, null);
       }
+      
+      Id.NumberIssuerCode = NationalHealthcareIdentifierString.Substring(5, 1);
 
       Id.IndustryCode = NationalHealthcareIdentifierString.Substring(0, 2);
       if (Id.IndustryCode != _ValidIndustryCode)
       {
         return false;
       }
-
+      
       Id.CountryCode = NationalHealthcareIdentifierString.Substring(2, 3);
       if (Id.CountryCode != _ValidCountryCode)
       {
@@ -84,6 +103,8 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
         return false;
       }
 
+      Id.ValueDisplay = $"{Id.Value.Substring(0, 4)} {Id.Value.Substring(4 , 4)} {Id.Value.Substring(8, 4)} {Id.Value.Substring(12, 4)}";
+      
       NationalHealthcareIdentifierBase = Id;
       return true;
     }

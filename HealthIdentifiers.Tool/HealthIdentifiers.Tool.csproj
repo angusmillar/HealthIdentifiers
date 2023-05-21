@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HealthIdentifiers.Identifiers\HealthIdentifiers.Identifiers.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Images\hpi-i.png" />
+      <Resource Include="Images\hpi-i.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\medicare-card.png" />
+      <Resource Include="Images\medicare-card.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\doctor-female.png" />
+      <Resource Include="Images\doctor-female.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\hpi-o.png" />
+      <Resource Include="Images\hpi-o.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\identifiers.png" />
+      <Resource Include="Images\identifiers.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\ihi.png" />
+      <Resource Include="Images\ihi.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\unique-identifier.png" />
+      <Resource Include="Images\unique-identifier.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Icons\unique-identifier.ico" />
+      <Resource Include="Icons\unique-identifier.ico">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+</Project>

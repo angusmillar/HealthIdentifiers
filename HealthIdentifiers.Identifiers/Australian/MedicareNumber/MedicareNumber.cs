@@ -9,6 +9,11 @@ namespace HealthIdentifiers.Identifiers.Australian.MedicareNumber
     /// The whole Medicare Number value
     /// </summary>
     public string Value { get; internal set; }
+    
+    /// <summary>
+    /// The Medicare Number formatted for human display
+    /// </summary>
+    public string ValueDisplay {get; internal set; }
 
     /// <summary>
     /// 8-digits in total, the first digit should be in the range 2-6

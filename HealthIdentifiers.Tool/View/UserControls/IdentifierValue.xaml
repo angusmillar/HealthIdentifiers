@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="HealthIdentifiers.Tool.View.UserControls.IdentifierValue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:HealthIdentifiers.Tool.View.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="110" d:DesignWidth="450">
+
+    <GroupBox x:Name="LayoutRoot" Grid.Row="1" Margin="10,0,10,0" FontSize="16" FontWeight="Light"
+              Header="Identifier value">
+        <StackPanel Orientation="Vertical">
+            <Grid Background="White">
+                <Border x:Name="BorderValue" BorderThickness="2" BorderBrush="LightGray">
+                    <TextBox x:Name="TextBoxValue"
+                             BorderThickness="0"
+                             Margin="0" 
+                             Height="30"
+                             FontSize="16" 
+                             FontWeight="Light"
+                             TextAlignment="Center" 
+                             VerticalContentAlignment="Center"
+                             Background="Transparent"
+                             Text="{Binding Path=ValueText}"
+                             TextChanged="TextBoxValue_OnTextChanged">
+                    </TextBox>
+                </Border>
+                <TextBlock x:Name="TextBlockPlaceHolder"
+                           Foreground="DarkGray"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Text="Paste here..."
+                           FontSize="16" FontWeight="Light"
+                           Background="Transparent"
+                           Panel.ZIndex="-1">
+                </TextBlock>
+                <Button x:Name="ButtonClear"
+                        Height="30" Width="40"
+                        HorizontalAlignment="Right" 
+                        Margin="5"
+                        Content="X"
+                        Background="Transparent" Foreground="LightGray" BorderThickness="0"
+                        Click="ButtonClear_OnClick">
+                </Button>
+            </Grid>
+
+            <Button Margin="0,10,0,0" Height="30" Click="ButtonBase_OnClick">Generate Random</Button>
+        </StackPanel>
+    </GroupBox>
+
+</UserControl>

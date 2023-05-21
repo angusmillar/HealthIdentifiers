@@ -10,5 +10,6 @@ namespace HealthIdentifiers.Identifiers.Australian.MedicareNumber
     string IRN { get; }
     string IssueNumber { get; }
     string Value { get; }
+    string ValueDisplay { get; }
   }
 }
