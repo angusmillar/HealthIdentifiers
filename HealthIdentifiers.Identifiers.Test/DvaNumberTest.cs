@@ -85,4 +85,17 @@ public class DvaNumberTest
       IDVANumberParser parser = new DVANumberParser();
       Assert.False(parser.TryParse(number, out var dva));
     }
+    
+    [Fact]
+    public void Test_DvaGeneration()
+    {
+      IDVANumberGenerator generator = new DVANumberGenerator();
+
+      for (var i = 0; i < 100000; i++)
+      {
+        string dvaValue = generator.Generate();
+        IDVANumberParser parser = new DVANumberParser();
+        Assert.True(parser.TryParse(dvaValue, out _));
+      }
+    }
 }

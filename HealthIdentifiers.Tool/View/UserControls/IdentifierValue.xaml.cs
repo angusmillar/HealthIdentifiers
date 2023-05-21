@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using HealthIdentifiers.Tool.Mvvm;
 
 namespace HealthIdentifiers.Tool.View.UserControls;
@@ -32,6 +29,9 @@ public partial class IdentifierValue : UserControl
     {
         TextBoxValue.Clear();
         TextBoxValue.Focus();
+        BorderValue.BorderBrush = Brushes.LightGray;
+        BorderValue.BorderThickness = new Thickness(2);
+        
     }
 
     public readonly static DependencyProperty IsValueValidProperty = 
@@ -44,7 +44,22 @@ public partial class IdentifierValue : UserControl
     {
         TextBlockPlaceHolder.Visibility = string.IsNullOrEmpty(TextBoxValue.Text) ? Visibility.Visible : Visibility.Hidden;
         RaiseEvent(new RoutedEventArgs(EventManagement.OnChangeViewEventIdentifierValue, sender));
-        
+        if (IsValueValid)
+        {
+            BorderValue.BorderBrush = Brushes.GreenYellow;
+            BorderValue.BorderThickness = new Thickness(3);
+        }
+        else
+        {
+            BorderValue.BorderBrush = Brushes.Maroon;
+            BorderValue.BorderThickness = new Thickness(3);
+        }
+
+        if (string.IsNullOrEmpty(TextBoxValue.Text))
+        {
+            BorderValue.BorderBrush = Brushes.LightGray;
+            BorderValue.BorderThickness = new Thickness(2);
+        }
     }
     private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
     {

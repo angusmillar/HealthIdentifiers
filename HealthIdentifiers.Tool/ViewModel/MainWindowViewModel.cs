@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using HealthIdentifiers.Tool.Enums;
 using HealthIdentifiers.Tool.Model;
@@ -15,14 +14,15 @@ public class MainWindowViewModel : ViewModelBase
         {
             new MedicareNumberIdentifier(),
             new MedicareProviderNumberIdentifier(),
+            new DvaIdentifier(),
             new IhiIdentifier(),
             new HpiiIdentifier(),
             new HpioIdentifier()
         };
-        SelectedIdentifier = IdentifierList.Single(x => x.Type == IdentifierType.MedicareNumber);
-        IsValid = false;
+        _selectedIdentifier = IdentifierList.Single(x => x.Type == IdentifierType.MedicareNumber);
+        _isValid = false;
     }
-
+    
     public ObservableCollection<Identifier> IdentifierList { get; private set; }
     
     private Identifier _selectedIdentifier;
@@ -36,7 +36,6 @@ public class MainWindowViewModel : ViewModelBase
             OnPropertyChanged();
         }
     }
-
     public bool IsValid
     {
         get

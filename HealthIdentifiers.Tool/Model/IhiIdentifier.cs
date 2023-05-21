@@ -10,7 +10,11 @@ public sealed class IhiIdentifier : Identifier
   private readonly Australian.IndividualHealthcareIdentifierParser _parser;
   
   public IhiIdentifier() 
-    : base(IdentifierType.Ihi, "IHI")
+    : base(
+      IdentifierType.Ihi, 
+      "IHI", 
+      "Individual Healthcare Identifier", 
+      @"/Images/ihi.png")
   {
     _identifier = new Australian.IndividualHealthcareIdentifier();
     _generator = new Australian.IndividualHealthcareIdentifierGenerator();

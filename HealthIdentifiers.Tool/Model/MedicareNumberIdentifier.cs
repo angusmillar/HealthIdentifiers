@@ -9,7 +9,11 @@ public sealed class MedicareNumberIdentifier : Identifier
   private readonly Australian.IMedicareMedicareNumberGenerator _generator;
   private readonly Australian.IMedicareNumberParser _parser;
   public MedicareNumberIdentifier()
-    : base(IdentifierType.MedicareNumber, "Medicare Number")
+    : base(
+      IdentifierType.MedicareNumber, 
+      "Medicare Number",
+      "Medicare Number",
+      @"/Images/medicare-card.png")
   {
     _generator = new Australian.MedicareMedicareNumberGenerator();
     _parser = new Australian.MedicareNumberParser();

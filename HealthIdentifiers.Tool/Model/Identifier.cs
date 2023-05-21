@@ -8,15 +8,19 @@ public abstract class Identifier : ViewModelBase
 {
     private string _value;
     private bool _isValid;
-    protected Identifier(IdentifierType type, string displayName)
+    protected Identifier(IdentifierType type, string displayName, string fullDisplayName, string iconFilePath)
     {
         Type = type;
         DisplayName = displayName;
+        FullDisplayName = fullDisplayName;
+        IconFilePath = iconFilePath;
         ComponentList = new ObservableCollection<IdentifierComponent>();
         _value = string.Empty;
     }
     public IdentifierType Type { get; set; }
     public string DisplayName { get; set; }
+    public string FullDisplayName { get; set; }
+    public string IconFilePath { get; set; }
     public ObservableCollection<IdentifierComponent> ComponentList { get; set; }
     public string Value
     {

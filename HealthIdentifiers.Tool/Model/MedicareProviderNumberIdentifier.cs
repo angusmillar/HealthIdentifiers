@@ -10,7 +10,11 @@ public sealed class MedicareProviderNumberIdentifier : Identifier
   private readonly Australian.MedicareProviderNumberParser _parser;
   
   public MedicareProviderNumberIdentifier() 
-    : base(IdentifierType.MedicareProviderNumber, "Medicare Provider Number")
+    : base(
+      IdentifierType.MedicareProviderNumber, 
+      "Medicare Provider Number",
+      "Medicare Provider Number",
+        @"/Images/doctor-female.png")
   {
     _generator = new Australian.MedicareProviderNumberGenerator();
     _parser = new Australian.MedicareProviderNumberParser();

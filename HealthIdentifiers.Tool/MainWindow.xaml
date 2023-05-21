@@ -4,25 +4,33 @@
         xmlns:UserControls="clr-namespace:HealthIdentifiers.Tool.View.UserControls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-        Title="Health Identifier tool"
-        Height="600" MinHeight="600" MaxHeight="600"
-        Width="450" MinWidth="450" MaxWidth="450" 
+        Title="Health Identifier Validator"
+        Height="550" MinHeight="550" MaxHeight="550"
+        Width="450" MinWidth="450" MaxWidth="450"
+        Icon="Icons/unique-identifier.ico"
         d:DataContext="{d:DesignInstance }">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
+            <RowDefinition Height="110" />
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
-        
-        <!-- <Rectangle Grid.Row="0" Grid.Column="0" Fill="Gray"></Rectangle> -->
-        
-        <UserControls:IdentifierSelector Grid.Row="0" Margin="10,0,0,0"/>
 
-        <UserControls:IdentifierValue Grid.Row="1" ValueText="{Binding Path=SelectedIdentifier.Value}" IsValueValid= "{Binding Path=SelectedIdentifier.IsValid}"/>
+        <UserControls:IdentifierSelector Grid.Row="0"
+                                         Margin="10,0,0,0" />
 
-        <UserControls:IdentifierComponents Grid.Row="2" ComponentList="{Binding Path=SelectedIdentifier.ComponentList}"/>
-        
+        <UserControls:IdentifierValue Grid.Row="1"
+                                      ValueText="{Binding Path=SelectedIdentifier.Value}"
+                                      IsValueValid="{Binding Path=SelectedIdentifier.IsValid}" />
+
+        <UserControls:IdentifierType Grid.Row="2"
+                                     FullDisplayName="{Binding Path=SelectedIdentifier.FullDisplayName}"
+                                     IconFilePath="{Binding Path=SelectedIdentifier.IconFilePath}" />
+
+        <UserControls:IdentifierComponents Grid.Row="3" 
+                                           ComponentList="{Binding Path=SelectedIdentifier.ComponentList}" />
+
     </Grid>
 </Window>

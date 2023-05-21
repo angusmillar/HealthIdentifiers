@@ -10,7 +10,11 @@ public sealed class HpiiIdentifier : Identifier
   private readonly Australian.HealthcareProviderIdentifierIndividualParser _parser;
   
   public HpiiIdentifier() 
-    : base(IdentifierType.Hpii, "HPI-I")
+    : base(
+      IdentifierType.Hpii,
+      "HPI-I",
+      "Healthcare Provider Identifier - Individual",
+      @"/Images/hpi-i.png")
   {
     _identifier = new Australian.HealthcareProviderIdentifierIndividual();
     _generator = new Australian.HealthcareProviderIdentifierIndividualGenerator();
