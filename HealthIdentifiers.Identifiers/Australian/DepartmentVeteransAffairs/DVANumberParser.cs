@@ -59,6 +59,7 @@ namespace HealthIdentifiers.Identifiers.Australian.DepartmentVeteransAffairs
           DVA.SegmentLink = string.Empty;
           if (DVANumberString.Length == 9)
             DVA.SegmentLink = DVANumberString.Substring(8, 1);
+          DVA.ValueDisplay = DVA.Value;
           DVANumber = DVA;
           return true;
 

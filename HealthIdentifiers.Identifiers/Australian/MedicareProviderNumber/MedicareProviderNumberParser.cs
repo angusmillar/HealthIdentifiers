@@ -43,6 +43,7 @@ namespace HealthIdentifiers.Identifiers.Australian.MedicareProviderNumber
               Mpn.Stem = MedicareProviderNumberString.Substring(0, 6);
               Mpn.LocationCharacter = MedicareProviderNumberString.Substring(6, 1);
               Mpn.CheckCharacter = MedicareProviderNumberString.Substring(7, 1);
+              Mpn.ValueDisplay = Mpn.Value;
               MedicareProviderNumber = Mpn;
               return true;
             }            

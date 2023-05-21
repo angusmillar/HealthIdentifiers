@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HealthIdentifiers.Tool.View.UserControls"
              mc:Ignorable="d"
-             d:DesignHeight="40" d:DesignWidth="800">
+             d:DesignHeight="40" d:DesignWidth="440">
 
-    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
-        <Label Content="Assigning Authority:" FontSize="16" FontWeight="Regular" ></Label>
-        <Label Content="AUSHIC" FontSize="16" FontWeight="Light"></Label>
+    <StackPanel x:Name="LayoutRoot" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+        <Label Content="{Binding Path=ValueName}" Width="200" FontSize="16" FontWeight="Regular" ></Label>
+        <Label Content="{Binding Path=Value}" FontSize="16" FontWeight="Light"></Label>
     </StackPanel>
     
 </UserControl>

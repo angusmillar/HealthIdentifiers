@@ -20,34 +20,42 @@ using HealthIdentifiers.Tool.ViewModel;
 
 namespace HealthIdentifiers.Tool
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : Window
+  {
+    private readonly MainWindowViewModel _mainWindowViewModel;
+    public MainWindow()
     {
-        private readonly MainWindowViewModel _MainWindowViewModel;
-        public MainWindow()
-        {
-            
-            InitializeComponent();
-            _MainWindowViewModel = new MainWindowViewModel();
-            DataContext = _MainWindowViewModel;
-            
-            AddHandler(EventManagement.OnChangeViewEventIdentifierValue, new RoutedEventHandler(SomeControl_ChangeView));
-        }
-        
-        private void SomeControl_ChangeView(object sender, RoutedEventArgs routedEventArgs)
-        {
-            if (routedEventArgs.Source is IdentifierValue identifierValue)
-            {
-                _MainWindowViewModel.SelectedIdentifier.Value = identifierValue.TextBoxValue.Text;
-            }
-            else
-            {
-                throw new EventSourceException(nameof(EventManagement.OnChangeViewEventIdentifierValue));
-            }
-            
-            
-        }
+
+      InitializeComponent();
+      _mainWindowViewModel = new MainWindowViewModel();
+      DataContext = _mainWindowViewModel;
+
+      AddHandler(EventManagement.OnChangeViewEventIdentifierValue, new RoutedEventHandler(OnChangeViewEventIdentifierValue));
+      AddHandler(EventManagement.OnClickGenerateIdentifierValue, new RoutedEventHandler(OnClickGenerateIdentifierValue));
     }
+
+    private void OnChangeViewEventIdentifierValue(object sender, RoutedEventArgs routedEventArgs)
+    {
+      
+      if (routedEventArgs.Source is IdentifierValue identifierValue)
+      {
+        int oldIndex = identifierValue.TextBoxValue.CaretIndex;  
+        //_mainWindowViewModel.SelectedIdentifier.Value = identifierValue.TextBoxValue.Text.Replace(" ", string.Empty);
+        _mainWindowViewModel.SelectedIdentifier.Validate(identifierValue.TextBoxValue.Text);
+        identifierValue.TextBoxValue.CaretIndex = oldIndex;
+      }
+      else
+      {
+        throw new EventSourceException(nameof(EventManagement.OnChangeViewEventIdentifierValue));
+      }
+
+    }
+    private void OnClickGenerateIdentifierValue(object sender, RoutedEventArgs e)
+    {
+      _mainWindowViewModel.SelectedIdentifier.GenerateRandomIdentifier();
+    }
+  }
 }

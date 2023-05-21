@@ -8,5 +8,6 @@
     string NumberIssuerCode { get; }
     string UniqueReference { get; }
     string Value { get; }
+    string ValueDisplay { get; }
   }
 }

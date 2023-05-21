@@ -85,6 +85,12 @@ namespace HealthIdentifiers.Identifiers.Australian.MedicareNumber
           return false;
       }
 
+      if (string.IsNullOrWhiteSpace(Med.IRN))
+      {
+        Med.ValueDisplay =  $"{Med.Identifer}{Med.Checksum}{Med.IssueNumber} {Med.IRN}";
+      }
+      Med.ValueDisplay =  $"{Med.Identifer}{Med.Checksum}{Med.IssueNumber} {Med.IRN}";
+      
       MedicareNumber = Med;
       return true;
 

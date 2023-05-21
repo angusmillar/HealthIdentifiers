@@ -30,7 +30,7 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
     /// “1” represents HPI-I 
     /// “2” represents HPI-O
     /// </summary>
-    abstract public string NumberIssuerCode { get; }
+    public string NumberIssuerCode { get; internal set;  }
 
     /// <summary>
     /// 9 char fixed mandatory numeric
@@ -50,6 +50,11 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
     /// Returns the entire Healthcare Identifier value
     /// </summary>
     public string Value { get; internal set; }
-   
+    
+    /// <summary>
+    /// Returns Healthcare Identifier formatted for human display
+    /// </summary>
+    public string ValueDisplay { get; internal set; }
+
   }
 }

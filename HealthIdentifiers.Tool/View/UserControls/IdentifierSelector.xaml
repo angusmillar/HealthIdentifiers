@@ -12,7 +12,6 @@
         <ComboBox Grid.Column="1" Width="250" HorizontalAlignment="Right"
                   FontSize="16"
                   FontWeight="Light"
-                  
                   ItemsSource="{Binding Path=IdentifierList}"
                   DisplayMemberPath="DisplayName"
                   SelectedValuePath="DisplayName"

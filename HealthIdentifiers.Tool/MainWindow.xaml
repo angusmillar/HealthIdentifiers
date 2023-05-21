@@ -20,9 +20,9 @@
         
         <UserControls:IdentifierSelector Grid.Row="0" Margin="10,0,0,0"/>
 
-        <UserControls:IdentifierValue Grid.Row="1" ValueText="{Binding Path=SelectedIdentifier.Value}"/>
+        <UserControls:IdentifierValue Grid.Row="1" ValueText="{Binding Path=SelectedIdentifier.Value}" IsValueValid= "{Binding Path=SelectedIdentifier.IsValid}"/>
 
-        <UserControls:IdentifierComponents Grid.Row="2"/>
+        <UserControls:IdentifierComponents Grid.Row="2" ComponentList="{Binding Path=SelectedIdentifier.ComponentList}"/>
         
     </Grid>
 </Window>

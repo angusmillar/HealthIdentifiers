@@ -19,8 +19,7 @@ namespace HealthIdentifiers.Identifiers.Australian.MedicareProviderNumber
       int Six = Convert.ToInt32(Stem.Substring(5, 1));
       int CheckDigit = ((One * 3) + (Two * 5) + (Three * 8) + (Four * 4) + (Five * 2) + (Six) + (PLVInteger * 6)) % 11;
       return Stem + PLVChar + MedicareProviderNumberParser.RemainderCheckCharacterChars[CheckDigit].ToString();
-
-
+      
     }
   }
 }

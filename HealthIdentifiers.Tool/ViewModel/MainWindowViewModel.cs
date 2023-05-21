@@ -4,7 +4,6 @@ using System.Linq;
 using HealthIdentifiers.Tool.Enums;
 using HealthIdentifiers.Tool.Model;
 using HealthIdentifiers.Tool.Mvvm;
-using HealthIdentifiers.Tool.View.UserControls;
 
 namespace HealthIdentifiers.Tool.ViewModel;
 
@@ -14,32 +13,42 @@ public class MainWindowViewModel : ViewModelBase
     {
         IdentifierList = new ObservableCollection<Identifier>
         {
-            //new Identifier(type: IdentifierType.Dva, displayName: "DVA"),
             new MedicareNumberIdentifier(),
-            //new Identifier(type: IdentifierType.MedicareProviderNumber, displayName: "Medicare Provider Number"),
-            //new Identifier(type: IdentifierType.Hpii, displayName: "HPI-I"),
-            //new Identifier(type: IdentifierType.Hpio, displayName: "HPI-O"),
-            //new Identifier(type: IdentifierType.Ihi, displayName: "IHI"),
+            new MedicareProviderNumberIdentifier(),
+            new IhiIdentifier(),
+            new HpiiIdentifier(),
+            new HpioIdentifier()
         };
-        _SelectedIdentifier = IdentifierList.Single(x => x.Type == IdentifierType.MedicareNumber);
+        SelectedIdentifier = IdentifierList.Single(x => x.Type == IdentifierType.MedicareNumber);
+        IsValid = false;
     }
 
     public ObservableCollection<Identifier> IdentifierList { get; private set; }
     
-    private Identifier _SelectedIdentifier;
+    private Identifier _selectedIdentifier;
+    private bool _isValid;
     public Identifier SelectedIdentifier
     {
-        get => _SelectedIdentifier;
+        get => _selectedIdentifier;
         set
         {
-            _SelectedIdentifier = value;
+            _selectedIdentifier = value;
             OnPropertyChanged();
         }
     }
 
-    public void ValidateIdentifierValue()
+    public bool IsValid
     {
-        
+        get
+        {
+            return _isValid;
+        }
+        set
+        {
+            if (value == _isValid)
+                return;
+            _isValid = value;
+            OnPropertyChanged();
+        }
     }
-    
 }

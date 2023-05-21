@@ -45,7 +45,7 @@ namespace HealthIdentifiers.Identifiers.Australian.DepartmentVeteransAffairs
     public string SegmentLink { get; internal set; }
 
     /// <summary>
-    /// DVW : DVA Card- White
+    /// DVW  DVA Card White
     /// DVG : DVA Card - Gold
     //  DVO : DVA Card - Orange
     /// </summary>
@@ -55,6 +55,11 @@ namespace HealthIdentifiers.Identifiers.Australian.DepartmentVeteransAffairs
     /// The complete DVA Number
     /// </summary>
     public string Value { get; internal set; }
+    
+    /// <summary>
+    /// The DVA Number formatted for human display
+    /// </summary>
+    public string ValueDisplay { get; internal set; }
 
 
   }

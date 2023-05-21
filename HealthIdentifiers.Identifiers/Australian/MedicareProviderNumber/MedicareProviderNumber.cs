@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HealthIdentifiers.Identifiers.Australian.MedicareProviderNumber
 {
-  class MedicareProviderNumber : IMedicareProviderNumber
+  public class MedicareProviderNumber : IMedicareProviderNumber
   {
     public string CheckCharacter { get; internal set; }
 
@@ -14,6 +14,8 @@ namespace HealthIdentifiers.Identifiers.Australian.MedicareProviderNumber
     public string Stem { get; internal set; }
 
     public string Value { get; internal set; }
+    
+    public string ValueDisplay { get; internal set;  }
 
     public bool IsValid()
     {

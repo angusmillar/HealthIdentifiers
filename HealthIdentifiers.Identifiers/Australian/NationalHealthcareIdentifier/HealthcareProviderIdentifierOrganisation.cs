@@ -7,6 +7,6 @@ namespace HealthIdentifiers.Identifiers.Australian.NationalHealthcareIdentifier
 {
   public class HealthcareProviderIdentifierOrganisation : NationalHealthcareIdentifierBase, IHealthcareProviderIdentifierOrganisation
   {
-    public override string NumberIssuerCode { get { return "2"; } }
+   
   }
 }
