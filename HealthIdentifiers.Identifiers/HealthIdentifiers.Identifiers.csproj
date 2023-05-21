@@ -2,18 +2,21 @@
 
   <PropertyGroup>    
     <!-- This project will output netstandard2.0 and net461 assemblies -->
-    <TargetFrameworks>net6.0;netstandard1.3</TargetFrameworks>
     <Description>A library for parsing healthcare identifiers to check they are syntactically correct. There are also methods for randomly generating instances of the same identifiers for testing purposes. The currently supported identifiers are primarily used in the Australian context and are: Medicare Number, Department Veterans Affairs Number (DVA), Individual Healthcare Identifier (IHI), Healthcare Provider Identifier - Individual (HPI-I), Healthcare Provider Identifier - Organisation (HPI-O)</Description>
     <Copyright>pyrohealth.net</Copyright>
     <Authors>AngusMillar</Authors>
     <PackageProjectUrl>https://github.com/angusmillar/HealthIdentifiers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/angusmillar/HealthIdentifiers</RepositoryUrl>
-    <PackageTags>Healthcare Identifiers Medicare DVA IHI HPI-I HPI-O</PackageTags>
+    <PackageTags>Australian Healthcare Identifiers Medicare DVA IHI HPI-I HPI-O</PackageTags>
     <Product>Australian Health Identifiers</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.4.0</FileVersion>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RepositoryType>C#</RepositoryType>
+    <PackageReleaseNotes>updated to netstandard2.1
+Added generator for DVA Numbers</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
