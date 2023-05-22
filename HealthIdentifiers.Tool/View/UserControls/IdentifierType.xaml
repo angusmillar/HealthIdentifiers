@@ -9,7 +9,7 @@
     <GroupBox x:Name="LayoutRoot" Margin="10,0,10,0" FontSize="16" FontWeight="Light"
               Header="Identifier Type">
         <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image x:Name="ImageIcon" Height="40" Source="{Binding Path=IconFilePath}" Margin="0,0,10,0"></Image>
+            <Image x:Name="ImageIcon"  Source="{Binding Path=IconFilePath}" Margin="0,0,10,0"></Image>
             <Label VerticalAlignment="Center" Content="{Binding Path=FullDisplayName}"  Margin="0,0,0,0"></Label>
             
         </StackPanel>
