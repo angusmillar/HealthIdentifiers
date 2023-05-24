@@ -13,7 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
+            <RowDefinition Height="120" />
             <RowDefinition Height="*" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
@@ -21,14 +21,15 @@
         <UserControls:IdentifierSelector Grid.Row="0"
                                          Margin="10,0,0,0" />
 
-        <UserControls:IdentifierValue Grid.Row="1"
-                                      ValueText="{Binding Path=SelectedIdentifier.Value}"
-                                      IsValueValid="{Binding Path=SelectedIdentifier.IsValid}" />
-
-        <UserControls:IdentifierType Grid.Row="2"
+        <UserControls:IdentifierType Grid.Row="1"
                                      FullDisplayName="{Binding Path=SelectedIdentifier.FullDisplayName}"
                                      IconFilePath="{Binding Path=SelectedIdentifier.IconFilePath}" />
 
+        <UserControls:IdentifierValue Grid.Row="2"
+                                      ValueText="{Binding Path=SelectedIdentifier.Value}"
+                                      IsValueValid="{Binding Path=SelectedIdentifier.IsValid}" />
+
+        
         <UserControls:IdentifierComponents Grid.Row="3" 
                                            ComponentList="{Binding Path=SelectedIdentifier.ComponentList}" />
 
